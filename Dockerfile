@@ -2,7 +2,7 @@ FROM python:3
 
 RUN apt-get update && apt-get install -y apache2 apache2-dev vim
 
-COPY . .
+COPY mod_wsgi-4.6.5 mod_wsgi-4.6.5 
 
 WORKDIR mod_wsgi-4.6.5
 
@@ -20,6 +20,6 @@ RUN apt-get install -y mysql-server
 #installing django
 RUN pip install --upgrade pip && pip install django
 
-EXPOSE 80
+EXPOSE 80 8080
 CMD ["apachectl","-DFOREGROUND"] 
 
