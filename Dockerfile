@@ -12,6 +12,14 @@ RUN ./configure && make && make install
 #loading the module in apache
 RUN echo "LoadModule wsgi_module /usr/lib/apache2/modules/mod_wsgi.so" >> /etc/apache2/apache2.conf
 
+WORKDIR /
+
+#installing MySQL
+RUN apt-get install -y mysql-server 
+
+#installing django
+RUN pip install --upgrade pip && pip install django
+
 EXPOSE 80
 CMD ["apachectl","-DFOREGROUND"] 
 
