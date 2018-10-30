@@ -20,6 +20,6 @@ RUN apt-get install -y mysql-server
 #installing django
 RUN pip install --upgrade pip && pip install django
 
-EXPOSE 80 8080
+EXPOSE 80 8080 8000
 CMD ["apachectl","-DFOREGROUND"] 
 
