@@ -18,9 +18,24 @@ h1 {
     font-size: 150px;
     font-weight: 200;
     letter-spacing: -1px;
+    text-transform: uppercase;
 }
 
 .container {
   padding-top: 25px;
   padding-bottom: 100px;
+}
+
+.output {
+	background-color: white;
+	display: block;
+
+	color: black;
+}
+
+h3 {
+
+	font-size: 200%;
+	color: #12ec8f; 
+
 }

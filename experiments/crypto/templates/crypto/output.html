@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  {% load static %}
   <!-- Font -->
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
   <!-- Bootstrap CSS -->
+  {% load static %}
   <link rel="stylesheet" href="{% static "crypto/styles/bootstrap.min.css" %}">
   <!-- Main css -->
-  <link rel="stylesheet" href="{% static "crypto/styles/index.css" %}">
+  <link rel="stylesheet" href="{% static "crypto/styles/output.css" %}">
 
 </head>
 
@@ -20,19 +20,19 @@
 
   <header>
     <div class="container">
-      <div class="row" style="height:40%">
+      <div class="row">
           <div class="col-md-12 text-center">
-            <h1>Crypto Labs</h1>
+		  <h1><a href="index.html">{{ heading }}</a></h1>
           </div>
       </div>
-      <div class="row" >
-        <div class="col-md-4 text-center">
-		<a href="/crypto/rsa"><button type="button" class="btn btn-primary btn-lg text-dark btn-outline-dark">RSA</button></a>
-        </div>
-        <div class="col-md-4 text-center">
-		<a href="/crypto/des"><button type="button" class="btn btn-primary btn-lg text-dark btn-outline-dark">DES</button></a>
-        </div>
-      </div>
+     	
+      <h3>Output</h3>
+      <div class="output">{{ output }}</div>
+     </div>
+     <div class="col-md-4 text-center">
+	     <a href="/crypto/{{ algo }}"><button type="button" class="btn btn-primary btn-lg text-dark btn-outline-dark">Back</button></a>
+     </div>
+      
     </div>
   </header>
 

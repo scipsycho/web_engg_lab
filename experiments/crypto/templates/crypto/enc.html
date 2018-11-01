@@ -12,7 +12,7 @@
   {% load static %}
   <link rel="stylesheet" href="{% static "crypto/styles/bootstrap.min.css" %}">
   <!-- Main css -->
-  <link rel="stylesheet" href="{% static "crypto/styles/rsa.css" %}">
+  <link rel="stylesheet" href="{% static "crypto/styles/enc.css" %}">
 
 </head>
 
@@ -22,26 +22,14 @@
     <div class="container">
       <div class="row">
           <div class="col-md-12 text-center">
-            <h1><a href="index.html">RSA</a></h1>
+		  <h1><a href="index.html">{{ heading }}</a></h1>
           </div>
       </div>
-
-      <div class="row" action="/crypto/rsa" method="post">
-        <form action="/my-handling-form-page" method="post">
-          <div>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="user_name">
-          </div>
-          <div>
-            <label for="mail">E-mail:</label>
-            <input type="email" id="mail" name="user_mail">
-          </div>
-          <div>
-            <label for="msg">Message:</label>
-            <textarea id="msg" name="user_message"></textarea>
-          </div>
-
-	  <input type="submit" value="Submit">
+      <form action="/crypto/{{ heading }}/" method="post" class="form_class">
+		{% csrf_token %}
+		{{ form }}
+		<input type="submit" name="encrypt" value="Encrypt" />
+		<input type="submit" name="decrypt" value="Decrypt" />
         </form>
       </div>
       
